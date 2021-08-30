@@ -17,17 +17,17 @@ public class HiddenFigures {
         char[] quoteChars = quote.toCharArray();
         HashMap<Character, Integer> charCount = new HashMap<>();
 
-        for (int i=0; i<quoteChars.length; i++){
-                if(!charCount.containsKey(quoteChars[i])){
-                    charCount.put(quoteChars[i], 0);
+        for (Character element : quoteChars){
+                if(!charCount.containsKey(element)){
+                    charCount.put(element, 0);
                 }
         }
 
         for (Map.Entry<Character,Integer> totals : charCount.entrySet()) {
-            for (int i=0; i<quoteChars.length; i++) {
-                if(totals.getKey().equals(quoteChars[i])){
+            for (Character element : quoteChars) {
+                if(totals.getKey().equals(element)){
                     int totalChar = totals.getValue()+1;
-                    charCount.replace(quoteChars[i],totalChar);
+                    charCount.replace(element,totalChar);
                 }
             }
         }
